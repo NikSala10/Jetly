@@ -231,7 +231,7 @@
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/fondo.svg);
+    background-image: url('https://raw.githubusercontent.com/NikSala10/Jetly/f497c67f2e939e73851fa81410ca1e09be89ea41/assets/fondo.svg');
   }
  
   .sect-first{
