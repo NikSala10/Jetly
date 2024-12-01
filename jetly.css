@@ -2,6 +2,21 @@
     margin: 0;
     padding: 0;
 }
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0; /* Garantiza que esté oculto inicialmente */
+}
 .nav  {
     display: flex;
     padding: 1rem;
@@ -123,11 +138,267 @@
     color: #EF4A60;
   }
 
+
+  /* FISRT INFORMATION SECT */
+  .principal {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hidden elements by default */
+.principal .prin-l,
+.principal .sect-first {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When visible */
+.principal .prin-l.active,
+.principal .sect-first.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); /* Sube un poco */
+  }
+  100% {
+      transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+
+/* Aplicar la animación a las imágenes */
+.images img {
+  animation: float 3s ease-in-out infinite; /* Duración de 3s, movimiento continuo */
+  transition: transform 0.3s ease; /* Suavidad al interactuar */
+}
+
+
+
+
+  .principal  {
+    margin-top: 3rem;
+  }
+  .prin-l  {
+    display: flex;
+  }
+  .text-principal  {
+    width: 29%;
+    padding-left: 6rem;
+    height: 300px;
+  }
+  .text-principal h4  {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #EF4A60;
+  }
+  #description  {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  #invite  {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px ;
+    margin-bottom: 1.5rem;
+  }
+  .text-principal h1  {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 62px;
+    line-height: 1.28;
+  }
+  #dest-top {
+    color: #F06779;
+  }
+  #new  {
+    padding-left: 2rem;
+  }
+  .images  {
+    width: 71%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/fondo.svg);
+  }
+ 
+  .sect-first{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    width: 35%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 4%;
+    margin-bottom: 3rem;
+    margin-top: -6.5rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 2rem;
+}
+.labels-o  {
+  flex-direction: column;
+  display: flex;
+}
+.input-item {
+    display: flex;
+    gap: 0.5rem;
+   
+}
+
+label {
+    font-size: 14px;
+    color: #EF4A60;
+    margin-bottom: 5px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+select, input[type="date"] {
+    padding: 7px;
+    border: 1px solid #FF888D;
+    border-radius: 50px;
+    font-size: 10px;
+    width: 110px;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    color: #EF4A60;
+    font-style: normal;
+    outline: none;
+}
+
+button.explore-btn {
+    background-color: #EF4A60;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+button.explore-btn:hover {
+    background-color: #FF888D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ABOUT US */
+  .about-us  {
+    background-image: url(/assets/aboutus.svg);
+    height: 350px;
+    text-align: center;
+  }
+  .about-us {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazada hacia abajo */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Animación de desvanecimiento y movimiento */
+  }
+  
+  .about-us.visible {
+    opacity: 1; /* Se hace visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+  }
+  .about-us h1 { 
+    color: white;
+    padding-top: 3rem;
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 35px;
+    line-height: 1;
+  }
+  /* Animaciones individuales para los textos */
+#what, #your, #explore {
+  opacity: 0;
+  transform: translateY(20px); /* Movimiento hacia arriba */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#what.visible, #your.visible, #explore.visible {
+  opacity: 1; /* Hacer visible el texto */
+  transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.about-us p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-us p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  #jet { 
+    font-family: "Gluten", serif;
+    font-size: 35px;
+  }
+  #your  {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
+  }
+  #explore  {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: transparent; /* Elimina el relleno */
+    -webkit-text-stroke: 1px #ffffff; /* Define el color y grosor del contorno */
+    font-size: 45px;
+  
+  }
+  .about-us p  {
+    padding-top: 2rem;
+   padding-left: 6rem;
+   padding-right: 6rem;
+    font-size: 17px;
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
   /* Card */
   .card-top  {
     justify-content: center;
     display: flex;
-    margin-top: 20rem;
+    margin-top: 1rem;
     height: 380px;
   }
   .card {
@@ -219,6 +490,29 @@
     align-items: center;
     padding-top: 2rem;
   }
+  .places {
+    opacity: 0;
+    transform: translateY(50px); /* Para que se desplace desde abajo */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animación para cuando el contenedor entre en la vista */
+.places.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación para hacerla más fluida */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
   .cards  {
     display: flex;
     gap: 3rem;
@@ -242,9 +536,52 @@
     -webkit-text-stroke: 2px #ffffff; /* Define el color y grosor del contorno */
    
   }
+  
   .card-container {
     width: 350px;
     height: 450px;
+  }
+  #subtitle-t  {
+   margin-bottom: 2rem;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    color: white;
+  }
+  #title-t { 
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  #sub-back { 
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: italic;
+  
+  }
+  .name  {
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 2rem;
+  }
+  .desc  {
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 13px;
+  }
+  .award  {
+    color: #EF4A60;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8px;
   }
   .fondis  {
     width: 400px;
@@ -344,7 +681,7 @@
   .card-container .card-t .back-card .content .name span {
     font-size: 36px;
     font-weight: 300;
-    color: #a41010;
+    color: #ffffff;
   }
   
   .card-container .card-t .back-card .content .desc {
@@ -363,7 +700,7 @@
   
   .card-container .card-t .back-card .content .award-container .award {
       padding: 8px;
-      background-color: #e50404;
+      background-color: #ffffff;
       font-size: 11px;
       text-align: center;
       border-radius: 20px;
@@ -439,11 +776,12 @@
   .card-container .card-t .back-card2 .content .name span {
     font-size: 36px;
     font-weight: 300;
-    color: #a41010;
+    color: #ffffff;
   }
   
   .card-container .card-t .back-card2 .content .desc {
       margin-top: 8px;
+      color: #ffffff;
   }
   
   .card-container .card-t .back-card2 .content hr {
@@ -458,7 +796,7 @@
   
   .card-container .card-t .back-card2 .content .award-container .award {
       padding: 8px;
-      background-color: #e50404;
+      background-color: #ffffff;
       font-size: 11px;
       text-align: center;
       border-radius: 20px;
@@ -479,7 +817,7 @@
   }
   
   .card-container .card-t .front-card3 {
-    background: url("https://images.pexels.com/photos/17920141/pexels-photo-17920141/free-photo-of-honolulu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background: url("https://images.pexels.com/photos/13963358/pexels-photo-13963358.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center;
   }
@@ -507,7 +845,7 @@
   }
   
   .card-container .card-t .back-card3 {
-    background: url('https://images.pexels.com/photos/4612306/pexels-photo-4612306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: url('https://images.pexels.com/photos/28226627/pexels-photo-28226627/free-photo-of-nieve-nevar-amanecer-paisaje.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
@@ -535,7 +873,7 @@
   .card-container .card-t .back-card3 .content .name span {
     font-size: 36px;
     font-weight: 300;
-    color: #a41010;
+    color: #ffffff;
   }
   
   .card-container .card-t .back-card3 .content .desc {
@@ -554,13 +892,65 @@
   
   .card-container .card-t .back-card3 .content .award-container .award {
       padding: 8px;
-      background-color: #e50404;
+      background-color: #ffffff;
       font-size: 11px;
       text-align: center;
       border-radius: 20px;
   }
 
 
+
+  /* TEXT ANIMATION */
+ 
+
+/* 
+PARALLAX EFECT */
+
+.parallax { 
+  background-image: url('https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax-sect h1  {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 120px;
+  color: transparent;
+  -webkit-text-stroke: 4px white; 
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.2),  /* Sombra suave cerca del texto */
+    0 2px 4px rgba(0, 0, 0, 0.1);  /* Efecto difuminado */
+  
+}
+.parallax2 { 
+  background-image: url('https://images.pexels.com/photos/3223552/pexels-photo-3223552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax3 { 
+  background-image: url('https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   /* FOOTER */
   .footer  {
     display: flex;
@@ -638,3 +1028,18 @@
     font-size: 14px;
     margin-top: 2rem;
   }
+
+  .item {
+    opacity: 0;
+    transform: translateX(100px); /* Desplazamiento hacia la derecha */
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1); /* Rebote */
+}
+
+/* Estado visible */
+.item.visible {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
+
+
+
