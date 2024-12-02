@@ -25,7 +25,7 @@
 }
 .logo   {
     cursor: pointer;
-    width: 10%;
+    width: 10rem;
 }
 
 .navigation  {
@@ -238,7 +238,7 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 50px;
-    width: 35%;
+    width: 31rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
